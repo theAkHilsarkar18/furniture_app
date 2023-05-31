@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:furniture_shopping_app/screens/cart/view/cartscreen.dart';
 import 'package:furniture_shopping_app/screens/detail/view/detailscreen.dart';
 import 'package:furniture_shopping_app/screens/favourite/view/favouritescreen.dart';
 import 'package:furniture_shopping_app/screens/home/view/homescreen.dart';
@@ -31,6 +32,7 @@ async {
           GetPage(name: '/bar',page: () => NavigationbarScreen(),),
           GetPage(name: '/detail',page: () => Detailscreen(),),
           GetPage(name: '/fav',page: () => FavouriteScreen(),),
+          GetPage(name: '/cart',page: () => CartScreen(),),
         ],
       ),
     ),

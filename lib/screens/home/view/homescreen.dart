@@ -52,7 +52,7 @@ class _HomescreenState extends State<Homescreen> {
                     ],
                   ),
                   InkWell(onTap: () {
-                    //Get.toNamed('/fav');
+                    Get.toNamed('/cart');
                   },child: Icon(Icons.shopping_cart_outlined,color: Colors.grey,size: 20.sp,)),
                 ],
               ),

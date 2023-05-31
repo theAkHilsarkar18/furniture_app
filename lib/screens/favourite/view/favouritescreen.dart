@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:furniture_shopping_app/screens/home/controller/homecontroller.dart';
+import 'package:furniture_shopping_app/screens/navigation%20bar/controller/navigationController.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
@@ -12,7 +13,7 @@ class FavouriteScreen extends StatefulWidget {
 }
 
 HomeController homeController = Get.put(HomeController());
-
+NavigationController navigationController = Get.put(NavigationController());
 class _FavouriteScreenState extends State<FavouriteScreen> {
   @override
   Widget build(BuildContext context) {
@@ -20,15 +21,24 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          leading: InkWell(onTap: () {
+            navigationController.navigationBarIndex.value = 0;
+          },child: Icon(Icons.arrow_back_outlined,color: Colors.black,size: 20.sp)),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.more_vert,color: Colors.black,size: 20.sp),
+            ),
+          ],
           backgroundColor: Colors.white,
           elevation: 0,
           centerTitle: true,
           title: Text('Favourites',style: GoogleFonts.overpass(color: Colors.black,fontSize: 15.sp,fontWeight: FontWeight.w500)),
         ),
-        body: Column(
+        body: Stack(
           children: [
             Container(
-              height: 70.h,
+              height: 80.h,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(itemBuilder: (context, index) => favouriteBox(
                 homeController.productList[index].productImg!,
@@ -36,16 +46,19 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 homeController.productList[index].productPrice!,
               ),itemCount: homeController.productList.length,),
             ),
-            Container(
-              margin: EdgeInsets.all(10),
-              height: 7.h,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(10),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                margin: EdgeInsets.all(10),
+                height: 7.h,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                alignment: Alignment.center,
+                child: Text('All add to my cart',style: GoogleFonts.overpass(color: Colors.white,letterSpacing: 1,fontSize: 13.sp)),
               ),
-              alignment: Alignment.center,
-              child: Text('Add to cart',style: GoogleFonts.overpass(color: Colors.white,letterSpacing: 1,fontSize: 13.sp)),
             ),
           ],
         ),

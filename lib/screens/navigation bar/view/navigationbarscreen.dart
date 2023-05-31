@@ -23,9 +23,11 @@ class _NavigationbarScreenState extends State<NavigationbarScreen> {
         body: Column(
           children: [
             Expanded(
-              child: Container(
-                height: 55.h,
-                  child: FavouriteScreen()),
+              child: Obx(
+                () => Container(
+                  height: 55.h,
+                    child: navigationController.screenList[navigationController.navigationBarIndex.value]),
+              ),
             ),
             Obx(() => navigationBar()),
           ],
