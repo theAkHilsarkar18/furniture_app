@@ -39,7 +39,7 @@ class _NavigationbarScreenState extends State<NavigationbarScreen> {
   Container navigationBar()
   {
     return Container(
-      height: 8.h,
+      height: 7.h,
       width: double.infinity,
       decoration: BoxDecoration(color: Colors.white),
       child: Row(

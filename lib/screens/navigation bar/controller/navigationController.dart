@@ -1,5 +1,6 @@
 import 'package:furniture_shopping_app/screens/favourite/view/favouritescreen.dart';
 import 'package:furniture_shopping_app/screens/home/view/homescreen.dart';
+import 'package:furniture_shopping_app/screens/profile/view/profilescreen.dart';
 import 'package:get/get.dart';
 
 class NavigationController extends GetxController
@@ -9,6 +10,6 @@ class NavigationController extends GetxController
     Homescreen(),
     FavouriteScreen(),
     Homescreen(),
-    Homescreen(),
+    ProfileScreen(),
   ].obs;
 }

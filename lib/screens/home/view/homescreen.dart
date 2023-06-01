@@ -89,32 +89,34 @@ class _HomescreenState extends State<Homescreen> {
               ],
             ),
             // product grid view
-            Container(
-              padding: EdgeInsets.only(left: 8,right: 8,top: 10),
-              height: 68.h,
-              width: MediaQuery.of(context).size.width,
-              //color: Colors.grey,
-              child: GridView.builder(
-                physics: BouncingScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 9/16,
-                  crossAxisCount: 2,
-                ),
-                itemBuilder: (context, index) => InkWell(
-                  onTap: () {
-                    Get.toNamed('/detail');
-                    detailController.productIndex.value = index;
-                  },
-                  child: productBox(
-                    homeController.productList[index].productName!,
-                    homeController.productList[index].productImg!,
-                    homeController.productList[index].productPrice!,
-                    homeController.productList[index].productRating!,
+            Expanded(
+              child: Container(
+                padding: EdgeInsets.only(left: 8,right: 8,top: 10),
+                height: 68.h,
+                width: MediaQuery.of(context).size.width,
+                //color: Colors.grey,
+                child: GridView.builder(
+                  physics: BouncingScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    childAspectRatio: 9/16,
+                    crossAxisCount: 2,
                   ),
+                  itemBuilder: (context, index) => InkWell(
+                    onTap: () {
+                      Get.toNamed('/detail');
+                      detailController.productIndex.value = index;
+                    },
+                    child: productBox(
+                      homeController.productList[index].productName!,
+                      homeController.productList[index].productImg!,
+                      homeController.productList[index].productPrice!,
+                      homeController.productList[index].productRating!,
+                    ),
+                  ),
+                  itemCount: homeController.productList.length,
                 ),
-                itemCount: homeController.productList.length,
               ),
             ),
           ],

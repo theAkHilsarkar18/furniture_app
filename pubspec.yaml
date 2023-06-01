@@ -42,6 +42,7 @@ dependencies:
   firebase_core: ^2.13.1
   firebase_auth: ^4.6.2
   google_sign_in: any
+  device_preview: ^1.1.0
 
 dev_dependencies:
   flutter_test:
