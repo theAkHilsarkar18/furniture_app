@@ -64,6 +64,7 @@ class _DetailscreenState extends State<Detailscreen> {
                     // product name
                     Text(
                       '${homeController.productList[detailController.productIndex.value].productName}',
+                      overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.poppins(color: Colors.black,fontSize: 20.sp),
                     ),
                     //SizedBox(height: 1.h,),
@@ -73,6 +74,7 @@ class _DetailscreenState extends State<Detailscreen> {
 
                       children: [
                         Text(
+                          overflow: TextOverflow.ellipsis,
                           '\$ ${homeController.productList[detailController.productIndex.value].productPrice}',
                           style: GoogleFonts.poppins(color: Colors.black,fontSize: 28.sp,fontWeight: FontWeight.w500),
                         ),

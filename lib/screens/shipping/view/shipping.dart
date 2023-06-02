@@ -27,6 +27,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
         ),
         backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor: Colors.white,
           centerTitle: true,
           title: Text('Shipping address',
               style: GoogleFonts.poppins(
@@ -41,7 +42,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
         ),
         body: ListView.builder(itemBuilder: (context, index) => InkWell(onTap: () {
           shippingController.selectAddress(index+1);
-        },child: addressBox(index+1)),itemCount: 3),
+        },child: addressBox(index+1)),itemCount: 13),
       ),
     );
   }
@@ -49,6 +50,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
   Widget addressBox(int index)
   {
     return Container(
+      margin: EdgeInsets.only(top: 10,bottom: 10),
       height: 20.h,
       width: MediaQuery.of(context).size.width,
       child: Column(
@@ -69,12 +71,12 @@ class _ShippingScreenState extends State<ShippingScreen> {
             () => Container(
               padding: EdgeInsets.all(10),
               margin: EdgeInsets.only(left: 15.sp,right: 15.sp),
-              height: 12.h,
+              height: 14.h,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
-                 boxShadow: [ BoxShadow(color: Colors.black12,offset: Offset(0,5),blurRadius: 8,spreadRadius: 3)],
+                boxShadow: [ BoxShadow(color: Colors.black12,offset: Offset(0,5),blurRadius: 10,spreadRadius: 1)],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

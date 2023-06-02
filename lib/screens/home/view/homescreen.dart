@@ -161,6 +161,7 @@ class _HomescreenState extends State<Homescreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text('$pName',
+                    overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.overpass(
                         color: Colors.black54,
                         fontWeight: FontWeight.w500,
@@ -169,10 +170,12 @@ class _HomescreenState extends State<Homescreen> {
                 Row(
                   children: [
                     Text('\$ $price',
+                        overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.overpass(
                             color: Colors.black, fontWeight: FontWeight.bold,fontSize: 12.sp)),
                     Spacer(),
                     Text('$rating',
+                        overflow: TextOverflow.ellipsis,
                         style: GoogleFonts.overpass(
                             color: Colors.black, fontWeight: FontWeight.w500,fontSize: 12.sp)),
                     Icon(Icons.star,size: 15.sp,color: Colors.amber,)

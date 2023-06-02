@@ -3,13 +3,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_shopping_app/screens/cart/view/cartscreen.dart';
+import 'package:furniture_shopping_app/screens/checkout/view/checkoutscreen.dart';
 import 'package:furniture_shopping_app/screens/detail/view/detailscreen.dart';
 import 'package:furniture_shopping_app/screens/favourite/view/favouritescreen.dart';
 import 'package:furniture_shopping_app/screens/home/view/homescreen.dart';
 import 'package:furniture_shopping_app/screens/intro/view/introscreen.dart';
 import 'package:furniture_shopping_app/screens/myorder/view/myorderscreen.dart';
 import 'package:furniture_shopping_app/screens/navigation%20bar/view/navigationbarscreen.dart';
+import 'package:furniture_shopping_app/screens/payment/view/payment.dart';
 import 'package:furniture_shopping_app/screens/profile/view/profilescreen.dart';
+import 'package:furniture_shopping_app/screens/review/view/review.dart';
 import 'package:furniture_shopping_app/screens/shipping/view/shipping.dart';
 import 'package:furniture_shopping_app/screens/signin_signup/view/signin.dart';
 import 'package:furniture_shopping_app/screens/signin_signup/view/signup.dart';
@@ -28,6 +31,8 @@ async {
       builder: (context, orientation, deviceType) => GetMaterialApp(
         theme: ThemeData(
           useMaterial3: true,
+          applyElevationOverlayColor: false,
+          appBarTheme: AppBarTheme(backgroundColor: Colors.white,),
           textTheme: TextTheme()
         ),
         initialRoute: '/bar',
@@ -44,6 +49,9 @@ async {
           GetPage(name: '/profile',page: () => ProfileScreen(),transition: Transition.cupertinoDialog),
           GetPage(name: '/order',page: () => MyOrderScreen(),transition: Transition.cupertinoDialog),
           GetPage(name: '/ship',page: () => ShippingScreen(),transition: Transition.cupertinoDialog),
+          GetPage(name: '/payment',page: () => PaymentScreen(),transition: Transition.cupertinoDialog),
+          GetPage(name: '/review',page: () => ReviewScreen(),transition: Transition.cupertinoDialog),
+          GetPage(name: '/checkout',page: () => CheckoutScreen(),transition: Transition.cupertinoDialog),
         ],
       ),
     ),

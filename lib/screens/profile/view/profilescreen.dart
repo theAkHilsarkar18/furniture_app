@@ -31,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   CircleAvatar(
                     radius: 32.sp,
-                    backgroundImage: AssetImage('assets/signin/girl.jpeg'),
+                    backgroundImage: AssetImage('assets/signin/girl.jpg'),
                   ),
                   SizedBox(width: 4.w,),
                   Column(
@@ -47,7 +47,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(height: 2.h,),
             Expanded(child: Container(height: 100,child: ListView.builder(itemBuilder: (context, index) => InkWell(
               onTap: () {
-                Get.toNamed('/ship');
+                if(index==0)
+                  {
+                    Get.toNamed('/order');
+                  }
+                else if(index==1)
+                  {
+                    Get.toNamed('/ship');
+                  }
+                else if(index==2)
+                  {
+                    Get.toNamed('/payment');
+                  }
+                else if(index==3)
+                  {
+                    Get.toNamed('/review');
+                  }
+                else if(index==4)
+                  {
+                    Get.toNamed('/order');
+                  }
               },
               child: profileMenuBox(
                 profileController.profileMenuList[index].title!,
@@ -66,13 +85,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Container(
       padding: EdgeInsets.all(10.sp),
       margin: EdgeInsets.only(left: 20.sp,right: 20.sp,top: 10.sp,bottom: 10.sp),
-      height: 10.h,
+      height: 11.h,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(color: Colors.black12,offset: Offset(0,5),blurRadius: 5,spreadRadius: 2)
-        ],
-        color: Colors.white,
+          boxShadow: [ BoxShadow(color: Colors.black12,offset: Offset(0,5),blurRadius: 10,spreadRadius: 1)],
+          color: Colors.white,
         borderRadius: BorderRadius.circular(10)
       ),
       child: Row(
@@ -82,7 +99,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('${title}',style: GoogleFonts.overpass(color: Colors.black,fontSize: 15.sp,fontWeight: FontWeight.w700,)),
+              Text('${title}',style: GoogleFonts.overpass(color: Colors.black,fontSize: 14.sp,fontWeight: FontWeight.w700,)),
+              SizedBox(height: 2,),
               Text('${desc}',style: GoogleFonts.overpass(color: Colors.grey,fontSize: 10.sp,)),
             ],
           ),

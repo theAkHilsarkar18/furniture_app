@@ -62,16 +62,21 @@ class _CartScreenState extends State<CartScreen> {
                       ],
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(left: 10,right: 10,bottom: 10),
-                    height: 7.h,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(10),
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed('/checkout');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(left: 10,right: 10,bottom: 10),
+                      height: 7.h,
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      alignment: Alignment.center,
+                      child: Text('Check out',style: GoogleFonts.overpass(color: Colors.white,letterSpacing: 1,fontSize: 13.sp)),
                     ),
-                    alignment: Alignment.center,
-                    child: Text('Add to cart',style: GoogleFonts.overpass(color: Colors.white,letterSpacing: 1,fontSize: 13.sp)),
                   ),
                 ],
               ),
@@ -110,11 +115,13 @@ class _CartScreenState extends State<CartScreen> {
                   SizedBox(height: 1.h,),
                   Text(
                     '${pname}',
+                    overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.poppins(color: Colors.grey,fontSize: 12.sp),
                   ),
                   SizedBox(height: 1.h,),
                   Text(
                     '\$ ${price}',
+                    overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.poppins(color: Colors.black,fontSize: 14.sp,fontWeight: FontWeight.w600),
                   ),
                   SizedBox(height: 1.h,),

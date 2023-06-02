@@ -94,11 +94,13 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                   SizedBox(height: 1.h,),
                   Text(
                     '${pname}',
+                    overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.poppins(color: Colors.grey,fontSize: 12.sp),
                   ),
                   SizedBox(height: 1.h,),
                   Text(
                     '\$ ${price}',
+                    overflow: TextOverflow.ellipsis,
                     style: GoogleFonts.poppins(color: Colors.black,fontSize: 14.sp,fontWeight: FontWeight.w600),
                   ),
                 ],

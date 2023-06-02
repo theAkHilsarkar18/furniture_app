@@ -17,6 +17,7 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          backgroundColor: Colors.white,
           leading: InkWell(onTap: () {
             Get.back();
           },child: Icon(Icons.arrow_back,size: 20.sp,color: Colors.black,)),
@@ -39,8 +40,8 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                   unselectedLabelColor: Colors.grey,
                   labelColor: Colors.black,
                   indicator: UnderlineTabIndicator(borderRadius: BorderRadius.circular(10),borderSide: BorderSide(color: Colors.black, width: 2)),
-                  labelStyle: GoogleFonts.poppins(fontSize: 13.sp,color: Colors.black,fontWeight:FontWeight.w600 ),
-                  unselectedLabelStyle: GoogleFonts.poppins(fontSize: 12.sp),
+                  labelStyle: GoogleFonts.poppins(fontSize: 11.sp,color: Colors.black,fontWeight:FontWeight.w600 ),
+                  unselectedLabelStyle: GoogleFonts.poppins(fontSize: 10.sp),
                   tabs: const [
                     Tab(child: Text('Delivered')),
                     Tab(child: Text('Processing')),
@@ -54,9 +55,9 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                   width: MediaQuery.of(context).size.width,
                   child: TabBarView(
                     children: [
-                      ListView.builder(itemBuilder: (context, index) => deliveredBox(Colors.green,'Delivered',Icon(Icons.done_all,color: Colors.grey)),itemCount: 10,),
-                      ListView.builder(itemBuilder: (context, index) => deliveredBox(Colors.amber,'Processing',Icon(Icons.watch_later_outlined,color: Colors.grey)),itemCount: 10,),
-                      ListView.builder(itemBuilder: (context, index) => deliveredBox(Colors.red,'Canceled',Icon(Icons.cancel_outlined,color: Colors.grey)),itemCount: 10,),
+                      ListView.builder(itemBuilder: (context, index) => deliveredBox(Colors.green,'Delivered',Icon(Icons.done_all,color: Colors.grey,size: 17.sp,)),itemCount: 10,),
+                      ListView.builder(itemBuilder: (context, index) => deliveredBox(Colors.amber,'Processing',Icon(Icons.watch_later_outlined,color: Colors.grey,size: 17.sp,)),itemCount: 10,),
+                      ListView.builder(itemBuilder: (context, index) => deliveredBox(Colors.red,'Canceled',Icon(Icons.cancel_outlined,color: Colors.grey,size: 17.sp,)),itemCount: 10,),
                     ],
                   ),
                 ),
@@ -75,9 +76,8 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
       height: 17.h,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(color: Colors.black12,offset: Offset(0,5),blurRadius: 5,spreadRadius: 2)
-          ],
+          boxShadow: [ BoxShadow(color: Colors.black12,offset: Offset(0,5),blurRadius: 10,spreadRadius: 1)],
+
           color: Colors.white,
           borderRadius: BorderRadius.circular(10)
       ),
@@ -139,8 +139,8 @@ class _MyOrderScreenState extends State<MyOrderScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     i1,
-                    SizedBox(width: 2.w,),
-                    Text('$status',style: GoogleFonts.poppins(color: c1,fontSize: 13.sp,fontWeight: FontWeight.w500)),
+                    SizedBox(width: 1.w,),
+                    Text('$status',style: GoogleFonts.overpass(color: c1,fontSize: 12.sp,fontWeight: FontWeight.w500)),
                   ],
                 ),
               ],

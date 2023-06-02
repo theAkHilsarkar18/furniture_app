@@ -35,7 +35,7 @@ class HomeController extends GetxController
 
   List<HomeModel> productList = [
     HomeModel(productImg:'assets/product/sofa2.jpeg',productName: 'Hall Sofa',productPrice: '12.00',productRating: '4.8' ),
-    HomeModel(productImg:'assets/product/tree1.jpeg',productName: 'Small Tree',productPrice: '12.00' ,productRating: '4.8'),
+    HomeModel(productImg:'assets/product/tree1.jpeg',productName: 'Small Tree Plants',productPrice: '12.00' ,productRating: '4.8'),
     HomeModel(productImg:'assets/product/bed3.webp',productName: 'Bed Decoration',productPrice: '12.00' ,productRating: '4.8'),
     HomeModel(productImg:'assets/product/lamp2.avif',productName: 'Stand Lamp',productPrice: '12.00',productRating: '4.8' ),
     HomeModel(productImg:'assets/product/kitchen.jpeg',productName: 'Kitchen Wear',productPrice: '12.00' ,productRating: '4.8'),
